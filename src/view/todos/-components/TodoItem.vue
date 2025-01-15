@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import { Trash2, SquareCheckBig } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
+import { SquareCheckBig, Trash2 } from 'lucide-vue-next'
 interface Props {
 	id: number
 	title: string
@@ -22,11 +22,13 @@ const isHovered = ref(false)
 		@mouseleave="isHovered = false"
 	>
 		<div class="text-gray-500">{{ index + 1 }}</div>
+
 		<div class="text-white">{{ title }}</div>
+		<div class="text-gray-500">id {{ id }}</div>
 		<div class="ml-auto flex gap-5 items-center">
 			<div class="text-green-500">
 				<button @click="emit('changeIsCompleted', id)">
-					<SquareCheckBig :class="{ 'text-gray-500': isCompleted }" />
+					<SquareCheckBig :class="{ 'text-gray-500': !isCompleted }" />
 				</button>
 			</div>
 			<Button
