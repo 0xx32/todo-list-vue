@@ -1,18 +1,18 @@
 {
-  "$schema": "https://shadcn-vue.com/schema.json",
-  "style": "default",
-  "typescript": true,
-  "tsConfigPath": "./tsconfig.app.json",
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "./src/assets/styles/global.css",
-    "baseColor": "slate",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "framework": "vite",
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
-  }
+	"$schema": "https://shadcn-vue.com/schema.json",
+	"style": "default",
+	"typescript": true,
+	"tsConfigPath": "./tsconfig.app.json",
+	"tailwind": {
+		"config": "tailwind.config.js",
+		"css": "./src/assets/styles/global.css",
+		"baseColor": "slate",
+		"cssVariables": true,
+		"prefix": ""
+	},
+	"framework": "vite",
+	"aliases": {
+		"components": "@/components",
+		"utils": "@/lib/utils"
+	}
 }

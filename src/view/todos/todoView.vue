@@ -2,10 +2,11 @@
 import { Plus, X } from 'lucide-vue-next'
 import { ref } from 'vue'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { useTodos } from './-components/hooks/useTodos'
+import { Button, Input } from '@/components/ui'
 import TodoItem from './-components/TodoItem.vue'
+import ClearTodos from './-components/ClearTodos.vue'
+
+import { useTodos } from './hooks/useTodos'
 
 const taskInput = ref('')
 
@@ -35,10 +36,8 @@ const changeIsCompleted = (id: number) => {
 
 <template>
 	<div class="w-1/3 border-white/30 mx-auto pt-40">
-		<div class="flex mb-6">
-			<Button class="ml-auto" variant="destructive" @click="clearTodosMutation.mutate">
-				Очистить лист</Button
-			>
+		<div class="flex mb-6 justify-end">
+			<ClearTodos @clear-todos="clearTodosMutation.mutate" />
 		</div>
 		<form @submit="addTask" @submit.prevent class="mb-6">
 			<div class="mb-4 flex gap-4 items-center">
