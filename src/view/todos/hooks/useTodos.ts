@@ -1,4 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/vue-query'
+import { editTodo } from './../../../utils/api/requests/tasks/index'
 
 import { addTodo, changeIsCompleted, clearTodos, getTodos, removeTodo } from '@/utils/api/requests/'
 import { toast } from 'vue-sonner'
@@ -34,11 +35,17 @@ export const useTodos = () => {
 			changeIsCompleted(id, status),
 		onSuccess: () => todosQuery.refetch(),
 	})
+
+	const editTodoMutation = useMutation({
+		mutationFn: ({ id, title }: { id: number; title: string }) => editTodo(id, title),
+		onSuccess: () => todosQuery.refetch(),
+	})
 	return {
 		todosQuery,
 		addTodoMutation,
 		removeTodoMutation,
 		changeIsCompletedMutation,
 		clearTodosMutation,
+		editTodoMutation,
 	}
 }

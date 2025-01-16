@@ -3,8 +3,8 @@ import { Plus, X } from 'lucide-vue-next'
 import { ref } from 'vue'
 
 import { Button, Input } from '@/components/ui'
-import TodoItem from './-components/TodoItem.vue'
 import ClearTodos from './-components/ClearTodos.vue'
+import TodoItem from './-components/TodoItem.vue'
 
 import { useTodos } from './hooks/useTodos'
 

@@ -17,3 +17,8 @@ export const changeIsCompleted = async (id: number, isCompleted: boolean) =>
 		isCompleted,
 	})
 export const clearTodos = async () => api.patch(RESOURCE, [])
+
+export const editTodo = async (id: number, title: string) =>
+	api.patch(`${RESOURCE}/${id}`, {
+		title,
+	})
